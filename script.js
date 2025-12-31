@@ -1,52 +1,82 @@
-const chatBody = document.getElementById('chat-body');
-const chatInput = document.getElementById('chat-input');
-const sendBtn = document.getElementById('send-btn');
-const aiToggleBtn = document.getElementById('ai-toggle-btn');
-const aiChat = document.getElementById('ai-chat');
+const aiToggleBtn = document.getElementById("ai-toggle-btn");
+const aiChat = document.getElementById("ai-chat");
+const closeAI = document.getElementById("close-ai");
 
-// Eldar-AI persona prompt
-const personaPrompt = `
-You are Eldar Hamidov, a high-achieving student with expertise in robotics, AI, and cybersecurity.
-Answer questions as if you are him, providing experience from competitions, projects, and learning journey.
-Be friendly, informative, and confident.
-`;
+const chatBody = document.getElementById("chat-body");
+const chatInput = document.getElementById("chat-input");
+const sendBtn = document.getElementById("send-btn");
 
-// Buton ile panel aç/kapa
-aiToggleBtn.addEventListener('click', () => {
-    if(aiChat.style.display === "none" || aiChat.style.display === "") {
-        aiChat.style.display = "flex";
-    } else {
-        aiChat.style.display = "none";
+const resizeHandle = document.getElementById("resize-handle");
+
+let isResizing = false;
+
+/* Toggle AI */
+aiToggleBtn.onclick = () => {
+    aiChat.style.display = "flex";
+};
+
+closeAI.onclick = () => {
+    aiChat.style.display = "none";
+};
+
+/* Resize logic */
+resizeHandle.addEventListener("mousedown", () => {
+    isResizing = true;
+    document.body.style.cursor = "ew-resize";
+});
+
+document.addEventListener("mousemove", (e) => {
+    if (!isResizing) return;
+
+    const newWidth = window.innerWidth - e.clientX;
+    if (newWidth >= 320 && newWidth <= window.innerWidth * 0.6) {
+        aiChat.style.width = newWidth + "px";
     }
 });
 
-function respond(userMessage) {
-    const msg = userMessage.toLowerCase();
+document.addEventListener("mouseup", () => {
+    isResizing = false;
+    document.body.style.cursor = "default";
+});
 
-    if(msg.includes("professionals competition")) {
-        return "Ah, the Professionals Competition! I learned a lot about advanced robotics systems, teamwork, and problem-solving strategies.";
-    } else if(msg.includes("new experiences") || msg.includes("experience")) {
-        return "Recently, I gained experience in AI algorithm optimization and handling real-time data during competitions.";
-    } else if(msg.includes("ai project")) {
-        return "My AI project focuses on real-time data processing and intelligent decision-making, which I developed for HASC 2025.";
-    } else {
-        return "Interesting question! Could you be more specific or ask about my competitions, AI projects, or robotics experience?";
+/* Persona AI */
+function aiResponse(msg) {
+    msg = msg.toLowerCase();
+
+    if (msg.includes("professionals")) {
+        return "The Professionals Competition taught me advanced robotics design, teamwork under pressure, and real-world problem solving.";
     }
+    if (msg.includes("experience")) {
+        return "I gained hands-on experience with AI optimization, cybersecurity strategies, and high-level competition workflows.";
+    }
+    if (msg.includes("ai")) {
+        return "AI is one of my strongest areas — from decision-making systems to intelligent automation projects.";
+    }
+
+    return "That's a great question. You can ask me about competitions, AI projects, robotics, or my learning journey.";
 }
 
-sendBtn.addEventListener('click', () => {
-    const userMsg = chatInput.value.trim();
-    if(!userMsg) return;
+/* Send message */
+sendBtn.onclick = sendMessage;
+chatInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") sendMessage();
+});
 
-    chatBody.innerHTML += `<p><strong>You:</strong> ${userMsg}</p>`;
-    const aiMsg = respond(userMsg);
-    chatBody.innerHTML += `<p><strong>Eldar-AI:</strong> ${aiMsg}</p>`;
+function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
 
-    chatInput.value = '';
+    addMessage(text, "user");
+    const reply = aiResponse(text);
+    setTimeout(() => addMessage(reply, "ai"), 400);
+
+    chatInput.value = "";
+}
+
+function addMessage(text, type) {
+    const div = document.createElement("div");
+    div.className = `message ${type}`;
+    div.textContent = text;
+    chatBody.appendChild(div);
     chatBody.scrollTop = chatBody.scrollHeight;
-});
-
-// Enter tuşu ile gönderim
-chatInput.addEventListener('keypress', function(e) {
-    if(e.key === 'Enter') sendBtn.click();
-});
+}
