@@ -1,113 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eldar Hamidov | CV & AI</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Eldar Hamidov | CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
+    <h1>Eldar Hamidov</h1>
+    <p class="subtitle">Student | Robotics • AI • Cybersecurity</p>
 
-    <header>
-        <h1>Eldar Hamidov</h1>
-        <p class="subtitle">Student | Robotics • AI • Cybersecurity</p>
-        <p class="contact">
-            Azerbaijan ·
-            <a href="mailto:eldarhamidov2009@gmail.com">eldarhamidov2009@gmail.com</a> ·
-            <a href="https://github.com/Eldar-005" target="_blank">GitHub</a>
-        </p>
-    </header>
-
-    <section>
-        <h2>About</h2>
-        <p>
-            High-achieving student with strong experience in robotics, artificial intelligence,
-            and cybersecurity competitions. Finalist and award winner in multiple national and
-            international Olympiads and innovation challenges.
-        </p>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <ul>
-            <li><strong>Sumqayıt İstedad Liseyi</strong> — Secondary Education (2016–2023)</li>
-            <li><strong>T. İsmayılov adına 29 nömrəli tam orta məktəb</strong> — Ongoing (2023–Present)</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Skills</h2>
-        <ul class="skills">
-            <li>Python</li>
-            <li>C++</li>
-            <li>Algorithms & Problem Solving</li>
-            <li>Robotics Systems</li>
-            <li>Cybersecurity Fundamentals</li>
-            <li>MS Excel</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Languages</h2>
-        <ul>
-            <li>Azerbaijani — Native</li>
-            <li>English — Good</li>
-            <li>Turkish — Good</li>
-            <li>Russian — Intermediate</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Competitions & Achievements</h2>
-        <ul>
-            <li>RoboCross Online Challenge (Egypt, 2020) — <strong>2nd Place (Global)</strong></li>
-            <li>EU4Climate “Özün Yarat” Competition (2020) — <strong>1st Place</strong></li>
-            <li>WRO Virtual Games (Panama, 2020) — <strong>Finalist</strong></li>
-            <li>WRO Canada Virtual Olympiad (2020) — <strong>5th Place</strong></li>
-            <li>Teknofest Azerbaijan (2022) — <strong>Finalist</strong></li>
-            <li>SAF 2023 — <strong>Winner (Innovative Exhibition Category)</strong></li>
-            <li>National Junior Cybersecurity Olympiad (2025) — <strong>2nd Place</strong></li>
-            <li>Professionals Competition, Saint Petersburg (2025) — <strong>1st Place</strong></li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>Bebras Informatics Competition — Semifinalist</li>
-            <li>Bebras Challenge USA — Honor Roll</li>
-            <li>International AI Olympiad — Honor Roll</li>
-            <li>AKTA Cyber Summer School — Participant</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <strong>AI Project (HASC 2025)</strong> — 
-                <a href="github.com/Eldar-005/eldar_hasc2025" target="_blank">AI Project#1</a>
-            </li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>Last updated: 2025</p>
-    </footer>
-
+    <p>
+        High-achieving student with experience in robotics, AI, and cybersecurity competitions.
+    </p>
 </div>
 
-<!-- AI Toggle Button -->
-<button id="ai-toggle-btn">Eldar-AI</button>
+<!-- AI BUTTON -->
+<button id="ai-btn">Eldar-AI</button>
 
-<!-- AI Chat Widget -->
-<div id="ai-chat">
-    <div id="chat-header">Eldar-AI 🤖</div>
-    <div id="chat-body"></div>
-    <input type="text" id="chat-input" placeholder="Ask me something...">
-    <button id="send-btn">Send</button>
+<!-- AI PANEL -->
+<div id="ai-panel">
+    <div class="ai-header">
+        Eldar-AI 🤖
+        <span id="close-ai">✕</span>
+    </div>
+
+    <div id="ai-messages"></div>
+
+    <div class="ai-input">
+        <input id="ai-input" type="text" placeholder="Ask something...">
+        <button id="send">Send</button>
+    </div>
 </div>
 
 <script src="script.js"></script>
