@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Eldar Hamidov | CV</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eldar Hamidov | CV</title>
+<style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f5f5f5; color: #333; line-height: 1.6; }
+    a { color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 900px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    h1 { font-size: 2.5em; margin-bottom: 5px; color: #222; }
+    .subtitle { font-size: 1.2em; color: #555; margin-bottom: 20px; }
+
+    h2 { margin-top: 30px; margin-bottom: 10px; color: #007bff; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px; }
+    ul { list-style-type: disc; margin-left: 20px; margin-bottom: 20px; }
+    li { margin-bottom: 5px; }
+
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    table th, table td { text-align: left; padding: 8px; border-bottom: 1px solid #ddd; }
+
+    /* AI Panel */
+    #ai-btn { position: fixed; top: 20px; right: 20px; background: #007bff; color: #fff; border: none; padding: 12px 18px; border-radius: 50px; cursor: pointer; font-weight: bold; z-index: 1000; }
+    #ai-panel { position: fixed; top: 0; right: -400px; width: 400px; height: 100%; background: #fff; box-shadow: -4px 0 20px rgba(0,0,0,0.2); transition: 0.3s; z-index: 999; display: flex; flex-direction: column; }
+    .ai-header { background: #007bff; color: #fff; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+    #ai-messages { flex: 1; padding: 15px; overflow-y: auto; }
+    .ai-input { display: flex; padding: 10px; border-top: 1px solid #ddd; }
+    .ai-input input { flex: 1; padding: 8px; border-radius: 5px; border: 1px solid #ccc; margin-right: 5px; }
+    .ai-input button { padding: 8px 12px; background: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+
+</style>
 </head>
 <body>
 
@@ -12,9 +39,69 @@
     <h1>Eldar Hamidov</h1>
     <p class="subtitle">Student | Robotics • AI • Cybersecurity</p>
 
-    <p>
-        High-achieving student with experience in robotics, AI, and cybersecurity competitions.
-    </p>
+    <h2>Personal Information</h2>
+    <table>
+        <tr><th>Full Name:</th><td>Eldar Vahid Hamidov</td></tr>
+        <tr><th>Date of Birth:</th><td>30.10.2009</td></tr>
+        <tr><th>Place of Birth:</th><td>Sumqayıt, Azerbaijan</td></tr>
+        <tr><th>Gender:</th><td>Male</td></tr>
+        <tr><th>Marital Status:</th><td>Single</td></tr>
+        <tr><th>Nationality:</th><td>Azerbaijani</td></tr>
+        <tr><th>Phone:</th><td>099 760 30 10</td></tr>
+        <tr><th>Email:</th><td><a href="mailto:eldarhamidov2009@gmail.com">eldarhamidov2009@gmail.com</a></td></tr>
+        <tr><th>GitHub:</th><td><a href="https://github.com/Eldar-005/eldar_hasc2025" target="_blank">eldar_hasc2025</a></td></tr>
+    </table>
+
+    <h2>Education</h2>
+    <ul>
+        <li>Sumqayıt City Talent Lyceum, 2023 - Present</li>
+        <li>Sumqayıt City T. Ismayilov Secondary School No.29, 2016 - 2023</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <ul>
+        <li>Russian - Intermediate</li>
+        <li>English - Good</li>
+        <li>Turkish - Good</li>
+    </ul>
+
+    <h2>Computer Skills</h2>
+    <ul>
+        <li>MS Windows, MS Excel, Internet Explorer</li>
+        <li>Programming: Python, C++</li>
+    </ul>
+
+    <h2>Certificates</h2>
+    <ul>
+        <li>Bebras Informatics & Algorithmic Thinking Competition 2024-2025 - Semifinal</li>
+        <li>Bebras Challenge USA 2024-2025 - Honor Roll</li>
+        <li"Sabahın Alimləri XIV National Competition - Physics & Astronomy Nomination</li>
+    </ul>
+
+    <h2>Achievements & Competitions</h2>
+    <ul>
+        <li>RoboCross Online Challenge, Egypt - 2nd Place Worldwide (2020)</li>
+        <li>EU4Climate "Create Yourself" Competition, Azerbaijan - 1st Place, Textile Category (2020)</li>
+        <li>Yaz Elm Festival, Baku Engineering University - 3rd Place</li>
+        <li>WRO Robot Virtual Games, Panama 2020 - Finalist</li>
+        <li>WRO Canada 2020-X - 5th Place</li>
+        <li>5th International Scratch Creative Programming Olympiad 2021 - National Finalist</li>
+        <li>SAF Festival 2021 - Finalist</li>
+        <li>International Robotics Olympiad, Egypt, SUMracers Team - 5th Place (2021)</li>
+        <li>EU4Climate Regional Project 2022 - "Create Yourself" Finalist</li>
+        <li>ALP Logo Competition 2022 - 4th Place</li>
+        <li>Teknofest Azerbaijan 2022 - Finalist</li>
+        <li>Bebras 2022</li>
+        <li>Yandex Cup</li>
+        <li>SAF 2023 - Winner in "Innovative Exhibition" category ("Rescue Bag for Earthquake")</li>
+        <li>WRO Azerbaijan 2024 - Finalist</li>
+        <li>Sabahın Alimləri XIV National Competition - Physics Finalist</li>
+        <li>International Inter-school AI Olympiad - Honor Roll</li>
+        <li>AKTA Cyber Summer School Participant</li>
+        <li>NJCO 2025 (National Junior Cybersecurity Olympiad) - 2nd Place</li>
+        <li>USA International English Olympiad - 1st Place</li>
+        <li>"Professionals" Competition, St. Petersburg 2025 - 1st Place</li>
+    </ul>
 </div>
 
 <!-- AI BUTTON -->
@@ -26,15 +113,45 @@
         Eldar-AI 🤖
         <span id="close-ai">✕</span>
     </div>
-
     <div id="ai-messages"></div>
-
     <div class="ai-input">
         <input id="ai-input" type="text" placeholder="Ask something...">
         <button id="send">Send</button>
     </div>
 </div>
 
-<script src="script.js"></script>
+<script>
+    const aiBtn = document.getElementById('ai-btn');
+    const aiPanel = document.getElementById('ai-panel');
+    const closeAi = document.getElementById('close-ai');
+
+    aiBtn.addEventListener('click', () => {
+        aiPanel.style.right = '0';
+    });
+    closeAi.addEventListener('click', () => {
+        aiPanel.style.right = '-400px';
+    });
+
+    const sendBtn = document.getElementById('send');
+    const aiInput = document.getElementById('ai-input');
+    const aiMessages = document.getElementById('ai-messages');
+
+    sendBtn.addEventListener('click', () => {
+        const msg = aiInput.value.trim();
+        if(msg){
+            const userMsg = document.createElement('div');
+            userMsg.textContent = 'You: ' + msg;
+            aiMessages.appendChild(userMsg);
+
+            const botMsg = document.createElement('div');
+            botMsg.textContent = 'Eldar-AI: Sorry, I am a demo bot. I cannot answer yet.';
+            aiMessages.appendChild(botMsg);
+
+            aiInput.value = '';
+            aiMessages.scrollTop = aiMessages.scrollHeight;
+        }
+    });
+</script>
+
 </body>
 </html>
