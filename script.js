@@ -1,56 +1,52 @@
-const aiBtn = document.getElementById("ai-btn");
-const aiPanel = document.getElementById("ai-panel");
-const closeAI = document.getElementById("close-ai");
+const chatBody = document.getElementById('chat-body');
+const chatInput = document.getElementById('chat-input');
+const sendBtn = document.getElementById('send-btn');
+const aiToggleBtn = document.getElementById('ai-toggle-btn');
+const aiChat = document.getElementById('ai-chat');
 
-const input = document.getElementById("ai-input");
-const send = document.getElementById("send");
-const messages = document.getElementById("ai-messages");
+// Eldar-AI persona prompt
+const personaPrompt = `
+You are Eldar Hamidov, a high-achieving student with expertise in robotics, AI, and cybersecurity.
+Answer questions as if you are him, providing experience from competitions, projects, and learning journey.
+Be friendly, informative, and confident.
+`;
 
-aiBtn.onclick = () => {
-    aiPanel.style.display = "flex";
-};
-
-closeAI.onclick = () => {
-    aiPanel.style.display = "none";
-};
-
-send.onclick = sendMessage;
-input.addEventListener("keydown", e => {
-    if (e.key === "Enter") sendMessage();
+// Buton ile panel aç/kapa
+aiToggleBtn.addEventListener('click', () => {
+    if(aiChat.style.display === "none" || aiChat.style.display === "") {
+        aiChat.style.display = "flex";
+    } else {
+        aiChat.style.display = "none";
+    }
 });
 
-function sendMessage() {
-    const text = input.value.trim();
-    if (!text) return;
+function respond(userMessage) {
+    const msg = userMessage.toLowerCase();
 
-    addMessage(text, "user");
-    input.value = "";
-
-    setTimeout(() => {
-        addMessage(aiReply(text), "ai");
-    }, 300);
+    if(msg.includes("professionals competition")) {
+        return "Ah, the Professionals Competition! I learned a lot about advanced robotics systems, teamwork, and problem-solving strategies.";
+    } else if(msg.includes("new experiences") || msg.includes("experience")) {
+        return "Recently, I gained experience in AI algorithm optimization and handling real-time data during competitions.";
+    } else if(msg.includes("ai project")) {
+        return "My AI project focuses on real-time data processing and intelligent decision-making, which I developed for HASC 2025.";
+    } else {
+        return "Interesting question! Could you be more specific or ask about my competitions, AI projects, or robotics experience?";
+    }
 }
 
-function addMessage(text, type) {
-    const div = document.createElement("div");
-    div.className = `msg ${type}`;
-    div.innerText = text;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-}
+sendBtn.addEventListener('click', () => {
+    const userMsg = chatInput.value.trim();
+    if(!userMsg) return;
 
-function aiReply(msg) {
-    msg = msg.toLowerCase();
+    chatBody.innerHTML += `<p><strong>You:</strong> ${userMsg}</p>`;
+    const aiMsg = respond(userMsg);
+    chatBody.innerHTML += `<p><strong>Eldar-AI:</strong> ${aiMsg}</p>`;
 
-    if (msg.includes("competition")) {
-        return "Competitions taught me discipline, teamwork, and solving real-world problems under pressure.";
-    }
-    if (msg.includes("experience")) {
-        return "I gained strong experience in AI logic, robotics systems, and cybersecurity fundamentals.";
-    }
-    if (msg.includes("ai")) {
-        return "AI is one of my main focus areas, especially intelligent decision-making systems.";
-    }
+    chatInput.value = '';
+    chatBody.scrollTop = chatBody.scrollHeight;
+});
 
-    return "You can ask me about competitions, AI projects, or my learning journey.";
-}
+// Enter tuşu ile gönderim
+chatInput.addEventListener('keypress', function(e) {
+    if(e.key === 'Enter') sendBtn.click();
+});
