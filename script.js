@@ -11,17 +11,17 @@ Answer questions as if you are him, providing experience from competitions, proj
 Be friendly, informative, and confident.
 `;
 
-// Buton ile panel aç/kapa (toggle)
+// Toggle funksiyası: aç/bağla
 aiToggleBtn.addEventListener('click', () => {
-    if (aiChat.style.display === "flex") {
-        aiChat.style.display = "none"; // bağla
+    if (aiChat.style.display === 'flex') {
+        aiChat.style.display = 'none'; // bağla
     } else {
-        aiChat.style.display = "flex"; // aç
-        chatInput.focus(); // açanda inputa fokus versin
+        aiChat.style.display = 'flex'; // aç
+        chatInput.focus(); // açanda yazı hissəsinə fokus
     }
 });
 
-// AI cavab funksiyası
+// AI cavab funksiyası (hazırda predefined)
 function respond(userMessage) {
     const msg = userMessage.toLowerCase();
 
@@ -45,17 +45,17 @@ function sendMessage() {
     chatBody.innerHTML += `<p><strong>You:</strong> ${userMsg}</p>`;
 
     // AI cavabı
-    const aiMsg = respond(userMsg); // hazırda predefined, gələcəkdə API ilə əvəz edilə bilər
+    const aiMsg = respond(userMsg);
     chatBody.innerHTML += `<p><strong>Eldar-AI:</strong> ${aiMsg}</p>`;
 
     chatInput.value = '';
-    chatBody.scrollTop = chatBody.scrollHeight;
+    chatBody.scrollTop = chatBody.scrollHeight; // avtomatik scroll
 }
 
-// Butona click funksiyası
+// Send düyməsi
 sendBtn.addEventListener('click', sendMessage);
 
-// Enter tuşu ilə göndərmə
+// Enter ilə göndərmə
 chatInput.addEventListener('keypress', function(e) {
-    if(e.key === 'Enter') sendMessage();
+    if (e.key === 'Enter') sendMessage();
 });
