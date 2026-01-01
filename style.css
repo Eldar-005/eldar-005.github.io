@@ -84,72 +84,23 @@ footer {
     margin-top: 40px;
 }
 
-/* AI Toggle Button */
-#ai-toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #0b3d91;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
-
-/* AI Chat Widget */
+/* ===== AI ELEMENTS DISABLED (GÖRÜNMƏSİN DEYƏ) ===== */
+#ai-toggle-btn,
 #ai-chat {
-    display: none;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 25%; /* ekranın sağ çeyreği */
-    height: 100%; /* tam yüksek */
-    background: #f5f5f5;
-    border-left: 2px solid #ccc;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.2);
-    font-size: 0.9rem;
-    z-index: 999;
+    display: none !important;
 }
 
-#chat-header {
-    background: #1a73e8;
-    color: white;
-    padding: 12px;
-    text-align: center;
+/* ===== LANGUAGE SWITCH (YENİ, ÇOX SADƏ) ===== */
+.lang-switch {
+    text-align: right;
+    margin-bottom: 10px;
 }
 
-#chat-body {
-    flex: 1;
-    padding: 8px;
-    overflow-y: auto;
-}
-
-#chat-input-container {
-    display: flex;
-    border-top: 1px solid #ccc;
-}
-
-#chat-input {
-    border: none;
-    padding: 8px;
-    flex: 1;
-}
-
-#send-btn {
-    padding: 8px 12px;
-    background: #1a73e8;
-    color: white;
-    border: none;
+.lang-switch button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    margin-left: 4px;
     cursor: pointer;
-}
-
-#chat-body p {
-    margin: 4px 0;
+    font-size: 0.8rem;
 }
