@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eldar Hamidov | CV & AI</title>
+    <title>Eldar Hamidov | CV</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
+    <!-- Language Switch -->
+    <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('az')">AZ</button>
+    </div>
+
     <header>
         <h1>Eldar Hamidov</h1>
-        <p class="subtitle">Student | Robotics • AI • Cybersecurity</p>
+        <p class="subtitle" data-en="Student | Robotics • AI • Cybersecurity"
+           data-az="Şagird | Robotexnika • Süni İntellekt • Kiber Təhlükəsizlik">
+           Student | Robotics • AI • Cybersecurity
+        </p>
         <p class="contact">
             Azerbaijan ·
             <a href="mailto:eldarhamidov2009@gmail.com">eldarhamidov2009@gmail.com</a> ·
@@ -21,24 +30,23 @@
     </header>
 
     <section>
-        <h2>About</h2>
-        <p>
-            High-achieving student with strong experience in robotics, artificial intelligence,
-            and cybersecurity competitions. Finalist and award winner in multiple national and
-            international Olympiads and innovation challenges.
+        <h2 data-en="About" data-az="Haqqımda">About</h2>
+        <p data-en="High-achieving student with strong experience in robotics, artificial intelligence, and cybersecurity competitions."
+           data-az="Robotexnika, süni intellekt və kiber təhlükəsizlik sahələrində milli və beynəlxalq yarış təcrübəsinə malik şagird.">
+           High-achieving student with strong experience in robotics, artificial intelligence, and cybersecurity competitions.
         </p>
     </section>
 
     <section>
-        <h2>Education</h2>
+        <h2 data-en="Education" data-az="Təhsil">Education</h2>
         <ul>
-            <li><strong>Sumqayıt İstedad Liseyi</strong> — Secondary Education (2016–2023)</li>
-            <li><strong>T. İsmayılov adına 29 nömrəli tam orta məktəb</strong> — Ongoing (2023–Present)</li>
+            <li>Sumqayıt İstedad Liseyi — Secondary Education (2016–2023)</li>
+            <li>T. İsmayılov adına 29 nömrəli tam orta məktəb — Ongoing (2023–Present)</li>
         </ul>
     </section>
 
     <section>
-        <h2>Skills</h2>
+        <h2 data-en="Skills" data-az="Bacarıqlar">Skills</h2>
         <ul class="skills">
             <li>Python</li>
             <li>C++</li>
@@ -50,7 +58,7 @@
     </section>
 
     <section>
-        <h2>Languages</h2>
+        <h2 data-en="Languages" data-az="Dillər">Languages</h2>
         <ul>
             <li>Azerbaijani — Native</li>
             <li>English — Good</li>
@@ -59,36 +67,51 @@
         </ul>
     </section>
 
+    <!-- COMPETITIONS -->
     <section>
-        <h2>Competitions & Achievements</h2>
+        <h2 data-en="Competitions & Achievements" data-az="Yarışlar və Nailiyyətlər">
+            Competitions & Achievements
+        </h2>
         <ul>
-            <li>RoboCross Online Challenge (Egypt, 2020) — <strong>2nd Place (Global)</strong></li>
-            <li>EU4Climate “Özün Yarat” Competition (2020) — <strong>1st Place</strong></li>
-            <li>WRO Virtual Games (Panama, 2020) — <strong>Finalist</strong></li>
-            <li>WRO Canada Virtual Olympiad (2020) — <strong>5th Place</strong></li>
-            <li>Teknofest Azerbaijan (2022) — <strong>Finalist</strong></li>
-            <li>SAF 2023 — <strong>Winner (Innovative Exhibition Category)</strong></li>
-            <li>National Junior Cybersecurity Olympiad (2025) — <strong>2nd Place</strong></li>
-            <li>Professionals Competition, Saint Petersburg (2025) — <strong>1st Place</strong></li>
-        </ul>
-    </section>
+            <li>Bebras Informatics Competition 2024–2025 — Semifinalist</li>
+            <li>Bebras Challenge USA 2024–2025 — Honor Roll</li>
+            <li>Sabahın Alimləri XIV — Physics & Astronomy (Participant / Finalist)</li>
 
-    <section>
-        <h2>Certifications</h2>
-        <ul>
-            <li>Bebras Informatics Competition — Semifinalist</li>
-            <li>Bebras Challenge USA — Honor Roll</li>
-            <li>International AI Olympiad — Honor Roll</li>
+            <li>RoboCross Online Challenge (Egypt, 2020) — 2nd Place (Global)</li>
+            <li>EU4Climate “Özün Yarat” (2020) — 1st Place (Fabric Category)</li>
+            <li>BMU Yaz Elm Festivalı — 3rd Place</li>
+
+            <li>WRO Virtual Games (Panama, 2020) — Finalist</li>
+            <li>WRO Canada Virtual Olympiad (2020) — 5th Place</li>
+            <li>International Scratch Olympiad 2021 — National Finalist</li>
+
+            <li>SAF 2021 — Finalist</li>
+            <li>International Robotics Olympiad (Egypt, 2021) — 5th Place (SUMracers)</li>
+            <li>EU4Climate “Özün Yarat” (2022) — Finalist</li>
+
+            <li>ALP Logo Competition 2022 — 4th Place</li>
+            <li>Teknofest Azerbaijan 2022 — Finalist</li>
+
+            <li>SAF 2023 — Winner (Innovative Exhibition)</li>
+            <li>WRO Azerbaijan 2024 — Finalist</li>
+
+            <li>International School AI Olympiad — Honor Roll</li>
             <li>AKTA Cyber Summer School — Participant</li>
+
+            <li>National Junior Cybersecurity Olympiad (NJCO 2025) — 2nd Place</li>
+            <li>USA International English Olympiad — 1st Place</li>
+            <li>Professionals Competition, Saint Petersburg (2025) — 1st Place</li>
         </ul>
     </section>
 
     <section>
-        <h2>Projects</h2>
+        <h2 data-en="Projects" data-az="Layihələr">Projects</h2>
         <ul>
             <li>
-                <strong>AI Project (HASC 2025)</strong> — 
-                <a href="https://github.com/Eldar-005/eldar_h_asc2025" target="_blank">AI project#1</a>
+                <strong>AI Project (HASC 2025)</strong> —
+                <a href="https://github.com/Eldar-005/eldar_hasc2025" target="_blank">
+                    GitHub Repository
+                </a>
             </li>
         </ul>
     </section>
@@ -97,19 +120,6 @@
         <p>Last updated: 2025</p>
     </footer>
 
-</div>
-
-<!-- AI Toggle Button -->
-<button id="ai-toggle-btn">Eldar-AI</button>
-
-<!-- AI Chat Widget -->
-<div id="ai-chat">
-    <div id="chat-header">Eldar-AI 🤖</div>
-    <div id="chat-body"></div>
-    <div id="chat-input-container">
-        <input type="text" id="chat-input" placeholder="Ask me something...">
-        <button id="send-btn">Send</button>
-    </div>
 </div>
 
 <script src="script.js"></script>
