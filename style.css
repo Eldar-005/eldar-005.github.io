@@ -1,21 +1,20 @@
-* { 
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    font-family: "Inter", Arial, sans-serif;
 }
 
 body {
     background: #f9f9f9;
     color: #222;
-    line-height: 1.6;
 }
 
 .container {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background: #ffffff;
+    background: white;
     border-radius: 8px;
 }
 
@@ -26,90 +25,112 @@ header {
 
 h1 {
     font-size: 2.4rem;
-    margin-bottom: 8px;
 }
 
 .subtitle {
-    font-size: 1.1rem;
     color: #555;
 }
 
-.contact {
-    margin-top: 8px;
-    font-size: 0.95rem;
-}
-
-.contact a {
-    color: #1a73e8;
-    text-decoration: none;
-}
-
 section {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
 }
 
 h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
     border-bottom: 2px solid #e5e5e5;
-    padding-bottom: 4px;
+    margin-bottom: 10px;
 }
 
-ul {
-    list-style: none;
+.lang-switch {
+    text-align: right;
 }
 
-ul li {
-    margin-bottom: 8px;
+.lang-switch button {
+    padding: 4px 8px;
 }
 
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skills li {
-    background: #eef2f7;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.9rem;
+.social-text-links {
+    margin-top: 8px;
+    font-size: 0.85rem;
 }
 
 footer {
     text-align: center;
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 40px;
-}
-
-/* Language switch */
-.lang-switch {
-    text-align: right;
-    margin-bottom: 10px;
-}
-
-.lang-switch button {
-    background: none;
-    border: 1px solid #ccc;
-    padding: 4px 8px;
-    margin-left: 4px;
-    cursor: pointer;
     font-size: 0.8rem;
+    color: #666;
 }
 
-/* Social text links */
-.social-text-links {
-    margin-top: 8px;
-    font-size: 0.85rem;
-    color: #555;
+/* ================= ELDAR-AI ================= */
+
+#aiToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0b3c78;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
-.social-text-links a {
-    color: #555;
-    text-decoration: none;
+#aiPanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: #0f172a;
+    color: white;
+    display: none;
+    z-index: 999;
 }
 
-.social-text-links a:hover {
-    color: #1a73e8;
+.aiHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #020617;
+}
+
+#closeAI {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#resizeHandle {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background: white;
+    color: black;
+    padding: 6px;
+    cursor: ew-resize;
+}
+
+.aiChat {
+    padding: 12px;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.inputArea {
+    display: flex;
+    gap: 6px;
+}
+
+.inputArea input {
+    flex: 1;
+    padding: 6px;
 }
