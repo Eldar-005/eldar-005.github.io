@@ -1,29 +1,31 @@
-const panel = document.getElementById("aiPanel");
-const toggle = document.getElementById("aiToggle");
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("aiToggle");
+    const panel = document.getElementById("aiPanel");
+    const close = document.getElementById("closeAI");
+    const sendBtn = document.getElementById("sendBtn");
 
-toggle.onclick = () => {
-    panel.style.display = "block";
-    toggle.style.display = "none";
-};
+    toggle.onclick = () => {
+        panel.style.display = "block";
+        toggle.style.display = "none";
+    };
 
-document.getElementById("closeAI").onclick = () => {
-    panel.style.display = "none";
-    toggle.style.display = "block";
-};
+    close.onclick = () => {
+        panel.style.display = "none";
+        toggle.style.display = "block";
+    };
 
-function sendMessage() {
-    const input = document.getElementById("userInput");
-    const msg = input.value.trim();
-    if (!msg) return;
+    sendBtn.onclick = () => {
+        const input = document.getElementById("userInput");
+        if (!input.value.trim()) return;
 
-    input.value = "";
-    addMsg("You", msg);
+        addMsg("You", input.value);
+        input.value = "";
 
-    // TEST MODE RESPONSE
-    setTimeout(() => {
-        addMsg("Eldar-AI", "AI backend not connected yet. UI is working correctly.");
-    }, 500);
-}
+        setTimeout(() => {
+            addMsg("Eldar-AI", "UI test successful. AI backend not connected yet.");
+        }, 400);
+    };
+});
 
 function addMsg(sender, text) {
     const div = document.createElement("div");
