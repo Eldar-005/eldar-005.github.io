@@ -32,3 +32,4 @@ function addMsg(sender, text) {
     div.innerHTML = `<b>${sender}:</b> ${text}<br><br>`;
     document.getElementById("messages").appendChild(div);
 }
+
